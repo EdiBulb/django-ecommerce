@@ -123,6 +123,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL = '/images/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static' # 이게 무슨 코드지?
+]
+
+MEDIA_ROOT = 'static/images' # 이미지 업로드할 때, images 폴더에 저장되도록 경로 지정
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
