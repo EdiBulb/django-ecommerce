@@ -8,10 +8,19 @@ import {addToCart} from '../actions/cartActions'
 
 function CartScreen({ match, Location, history}) {
     const productId = useParams.id
-    const qty = Location.search
+    const qty = Location.search ? Number(Location.search.split('=')[1]) :  1
 
-    console.log('qty:', qty)
+    const dispatch = useDispatch()
 
+    const cart = useSelector(state => state.cart)
+    const { cartItems } = cart
+    console.log('cartItems: ', cartItems)
+
+    useEffect(() => {
+        if(productId){
+            dispatch(addToCart(productId, qty))
+        }
+    }, [dispatch, productId, qty])
     return (
         <div>
             Cart
