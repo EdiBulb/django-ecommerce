@@ -23,7 +23,13 @@ function CartScreen({ match, Location, history}) {
     }, [dispatch, productId, qty])
     return (
         <div>
-            Cart
+            <Col md={8}>
+                <h1>Shopping Cart</h1>
+                {cartItems.length === 0}
+            </Col>
+            <Col md={4}>
+            
+            </Col>
         </div>
     )
 }
